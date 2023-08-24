@@ -1,0 +1,14 @@
+public class Main
+{
+	public static void main(String[] args)
+	{
+	    String str1 = "aeioughkk";
+	    String consonants = str1.replaceAll("[aeiou]","");//Remove Vowels 
+	    String vowels = str1.replaceAll("[^aeiou]","");//Remove Consonants
+	    StringBuffer sb = new StringBuffer(vowels);
+	    System.out.print(sb.reverse());
+	    System.out.println(consonants);
+	    
+		
+	}
+}
