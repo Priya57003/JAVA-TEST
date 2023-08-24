@@ -1,0 +1,45 @@
+#include <stdio.h>
+void isPalindrome(int num)
+{
+    int rem=0,rev=0;
+    int org=num;
+    while(num!=0)
+    {
+        rem = num%10;
+        rev =(rev*10)+rem;
+        num/=10;
+    }
+    if(rev==org)
+    {
+        printf("P");
+    }
+    else
+    {
+    int pal = org+rev;
+    int rem1=0,rev1=0,org1=pal;
+    while(pal!=0)
+    {
+        rem1 = pal%10;
+        rev1 =(rev1*10)+rem1;
+        pal/=10;
+    }
+    if(org1==rev1)
+    {
+        printf("Palindrome %d",org1);
+    }
+    else
+    {
+        isPalindrome(org1);
+    }
+    }
+    
+}
+int main()
+{
+    int num;
+    scanf("%d",&num);
+    isPalindrome(num);
+
+    return 0;
+}
+
