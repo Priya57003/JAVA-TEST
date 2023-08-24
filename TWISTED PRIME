@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <math.h>
+int  isTwist(int num)
+{
+     int flag2=0;
+    if(num==1)
+   {
+       printf("Prime");
+   }
+   for(int i=2;i<=sqrt(num);i++)
+   {
+       if(num%i==0)
+       flag2=1;
+   }
+   int rem,sum=0;
+   if(flag2==0)
+   {
+       while(num!=0)
+       {
+       rem=num%10;
+       sum=(sum*10)+rem;
+       num/=10;
+       }
+       
+   }
+   else
+   {
+       while(num!=0)
+       {
+       rem=num%10;
+       sum=(sum*10)+rem;
+       num/=10;
+       }
+   }
+   return sum;
+   
+}
+int main()
+{
+   int num,flag1=0;
+   scanf("%d",&num);
+   int Prime =isTwist(num);
+   printf("%d",Prime);
+   for(int i=2;i<=sqrt(Prime);i++)
+   {
+       if(Prime%i==0)
+       flag1=1;
+   }
+   if(flag1==0)
+   {
+       printf("Twisted prime number");
+   }
+   else
+   {
+       printf("Not a twisted prime number");
+   }
+    return 0;
+}
